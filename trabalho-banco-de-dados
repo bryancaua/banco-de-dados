@@ -15,3 +15,6 @@ WHERE a.nome = 'J.K. Rowling';
 
 -- Exercício 4
 SELECT * FROM Alunos WHERE curso = 'Engenharia de Software';
+
+-- Exercício 5
+SELECT produto, SUM(valor) AS receita_total FROM vendas GROUP BY produto;
