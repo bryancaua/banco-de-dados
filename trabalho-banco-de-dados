@@ -27,3 +27,6 @@ SELECT curso, COUNT(*) AS numero_de_alunos FROM alunos GROUP BY curso;
 
 -- Exercício 8
 SELECT produto, AVG(valor) AS media_de_receita FROM vendas GROUP BY produto;
+
+-- Exercício 9
+SELECT produto FROM vendas GROUP BY produto HAVING SUM(valor) > 10000;
