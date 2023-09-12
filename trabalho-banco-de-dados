@@ -30,3 +30,6 @@ SELECT produto, AVG(valor) AS media_de_receita FROM vendas GROUP BY produto;
 
 -- Exercício 9
 SELECT produto FROM vendas GROUP BY produto HAVING SUM(valor) > 10000;
+
+-- Exercício 10
+SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor HAVING COUNT(*) > 2;
