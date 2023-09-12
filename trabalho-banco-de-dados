@@ -12,3 +12,6 @@ SELECT l.titulo
 FROM livros l
 INNER JOIN autores a ON l.id_autor = a.id_autor
 WHERE a.nome = 'J.K. Rowling';
+
+-- Exercício 4
+SELECT * FROM Alunos WHERE curso = 'Engenharia de Software';
