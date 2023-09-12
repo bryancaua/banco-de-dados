@@ -36,3 +36,7 @@ SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor HAVING COU
 
 -- Exercício 11
 SELECT livros.titulo, autores.nome AS autor FROM livros INNER JOIN autores ON livros.autor_id = autores.id;
+
+-- Exercício 12
+SELECT alunos.nome AS aluno, cursos.nome AS curso FROM alunos LEFT JOIN matriculas ON alunos.id = matriculas.id_aluno
+LEFT JOIN cursos ON matriculas.id_curso = cursos.id;
