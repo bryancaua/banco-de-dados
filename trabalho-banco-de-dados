@@ -40,3 +40,8 @@ SELECT livros.titulo, autores.nome AS autor FROM livros INNER JOIN autores ON li
 -- Exercício 12
 SELECT alunos.nome AS aluno, cursos.nome AS curso FROM alunos LEFT JOIN matriculas ON alunos.id = matriculas.id_aluno
 LEFT JOIN cursos ON matriculas.id_curso = cursos.id;
+
+-- Exercício 13
+SELECT a.nome, l.titulo
+FROM autores a
+LEFT JOIN livros l ON a.id = l.autor_id;
