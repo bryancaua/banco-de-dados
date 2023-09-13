@@ -65,3 +65,10 @@ WHERE id = (
     GROUP BY autor_id
     ORDER BY COUNT(*) desc
     LIMIT 1);
+
+-- Exercício 17
+SELECT produto, sum(receita) AS venda_total
+FROM vendas
+GROUP BY produto
+ORDER BY venda_total
+LIMIT 1;
