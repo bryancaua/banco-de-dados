@@ -17,7 +17,7 @@ WHERE a.nome = 'J.K. Rowling';
 SELECT * FROM Alunos WHERE curso = 'Engenharia de Software';
 
 -- Exercício 5
-SELECT produto, SUM(valor) AS receita_total FROM vendas GROUP BY produto;
+SELECT produto, SUM(valor) AS venda_total FROM vendas GROUP BY produto;
 
 -- Exercício 6
 SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor;
@@ -38,7 +38,7 @@ SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor HAVING COU
 SELECT livros.titulo, autores.nome AS autor FROM livros INNER JOIN autores ON livros.autor_id = autores.id;
 
 -- Exercício 12
-SELECT alunos.nome AS aluno, cursos.nome AS curso FROM alunos LEFT JOIN matriculas ON alunos.id = matriculas.id_aluno
+SELECT alunos.nome AS aluno, cursos.nome AS curso FROM alunos LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
 LEFT JOIN cursos ON matriculas.id_curso = cursos.id;
 
 -- Exercício 13
@@ -72,3 +72,10 @@ FROM vendas
 GROUP BY produto
 ORDER BY venda_total
 LIMIT 1;
+
+-- Exercício 19 
+
+SELECT alunos.nome, COUNT(aluno_id) AS quantidade_curso
+FROM alunos
+INNER JOIN matriculas ON alunos.id = matriculas.aluno_id
+GROUP BY alunos.nome;
