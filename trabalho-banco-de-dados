@@ -79,3 +79,10 @@ SELECT alunos.nome, COUNT(aluno_id) AS quantidade_curso
 FROM alunos
 INNER JOIN matriculas ON alunos.id = matriculas.aluno_id
 GROUP BY alunos.nome;
+
+-- Exercício 20
+SELECT produto, COUNT(*) AS vendas_totais
+FROM vendas
+GROUP BY produto
+ORDER BY COUNT(*) desc
+LIMIT 1;
