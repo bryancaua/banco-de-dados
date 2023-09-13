@@ -55,3 +55,13 @@ RIGHT JOIN matriculas m ON a.id = m.aluno_id;
 SELECT matriculas.curso, alunos.nome
 FROM matriculas
 INNER JOIN alunos ON alunos.id = matriculas.aluno_id;
+
+-- Exercício 16
+SELECT nome
+FROM autores
+WHERE id = (
+	SELECT autor_id
+    FROM livros
+    GROUP BY autor_id
+    ORDER BY COUNT(*) desc
+    LIMIT 1);
